@@ -1,0 +1,9 @@
+[database]
+active = "data/db/notes.db"
+prompts = "data/prompts.json"
+
+[logger]
+cli = "data/log/cli.log"
+router = "data/log/router.log"
+prompts = "data/log/prompts.log"
+stream = true # Se utilizó para el ultimo testing realizado
