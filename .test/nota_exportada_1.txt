@@ -1,0 +1,4 @@
+ID: 1
+Fecha: 2025-06-19 04:54:42
+Contenido:
+Mi primera nota modificada con más contenido detallado
