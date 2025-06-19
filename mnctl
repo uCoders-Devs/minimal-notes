@@ -1,0 +1,37 @@
+#!/bin/env sh
+
+# Validar entorno virtual activo
+if [ -z "$VIRTUAL_ENV" ]; then
+  echo "[WRAPPER]: Activa tu entorno virtual antes de ejecutar este script."
+  exit 1
+fi
+
+# Validar directorio raíz
+if [ ! -f "cli/cli.py" ]; then
+  echo "[WRAPPER]: Ejecuta este script desde la raíz del proyecto."
+  exit 1
+fi
+
+# HACK: Validar existencia de librerías en el VENV. (Performance)
+missing=0
+for lib in typer dotenv google/genai; do
+  find "$VIRTUAL_ENV/lib" -type d -path "*/$lib" -print -quit | grep -q . || {
+    echo "[WRAPPER]: Falta dependencia: $lib"
+    missing=1
+  }
+done
+
+# Al final, antes del exec
+if [[ "$1" == "--test" ]]; then
+    script_dir="$(dirname "$0")"
+    test_script="$script_dir/mnctl.test.sh"
+    
+    if [[ -f "$test_script" ]]; then
+        exec "$test_script" "${@:2}"
+    else
+        echo "[WRAPPER]: mnctl.test.sh no encontrado en $script_dir"
+        exit 1
+    fi
+fi
+
+exec cli/mnctl "$@"
