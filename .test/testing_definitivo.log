@@ -1,0 +1,388 @@
+$: mnctl --test
+=== TESTING MINIMAL-NOTES CLI ===
+1. Creando notas de ejemplo...
+[2025-06-19 01:54:31,952][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:31,952][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+No existe o no se detectó una configuración de prompts.
+¿Desea crear una en la ruta 'data/prompts.json'? [Y/n]:
+[2025-06-19 01:54:42,658][Minimal-Notes][DEBUG] Se creó la configuración default de prompts en: data/prompts.json (cli.py:59)
+[2025-06-19 01:54:42,823][Router][DEBUG] Nota creada: id=1 (router.py:162)
+Se creó nota con ID 1:
+   >>> Mi primera nota de ejemplo
+[2025-06-19 01:54:42,823][Minimal-Notes][INFO] Nota creada: ID=1 (cli.py:83)
+[2025-06-19 01:54:43,963][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:43,963][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:44,031][Router][DEBUG] Nota creada: id=2 (router.py:162)
+Se creó nota con ID 2:
+   >>> Lista de tareas: comprar leche, estudiar Python, h...
+[2025-06-19 01:54:44,031][Minimal-Notes][INFO] Nota creada: ID=2 (cli.py:83)
+[2025-06-19 01:54:45,031][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:45,031][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:45,097][Router][DEBUG] Nota creada: id=3 (router.py:162)
+Se creó nota con ID 3:
+   >>> Notas de reunión: discutir arquitectura del sistem...
+[2025-06-19 01:54:45,098][Minimal-Notes][INFO] Nota creada: ID=3 (cli.py:83)
+[2025-06-19 01:54:46,108][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:46,108][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:46,181][Router][DEBUG] Nota creada: id=4 (router.py:162)
+Se creó nota con ID 4:
+   >>> Ideas para proyecto: implementar cache Redis, opti...
+[2025-06-19 01:54:46,181][Minimal-Notes][INFO] Nota creada: ID=4 (cli.py:83)
+[2025-06-19 01:54:47,193][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:47,193][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:47,264][Router][DEBUG] Nota creada: id=5 (router.py:162)
+Se creó nota con ID 5:
+   >>> Recordatorio: backup de base de datos cada domingo...
+[2025-06-19 01:54:47,264][Minimal-Notes][INFO] Nota creada: ID=5 (cli.py:83)
+2. Listando todas las notas...
+[2025-06-19 01:54:48,276][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:48,276][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:48,278][Router][DEBUG] 5 notas leídas (router.py:173)
+ID: 1 | FECHA: 2025-06-19 04:54:42
+   >>> Mi primera nota de ejemplo
+
+ID: 2 | FECHA: 2025-06-19 04:54:43
+   >>> Lista de tareas: comprar leche, estudiar Python, h...
+
+ID: 3 | FECHA: 2025-06-19 04:54:45
+   >>> Notas de reunión: discutir arquitectura del sistem...
+
+ID: 4 | FECHA: 2025-06-19 04:54:46
+   >>> Ideas para proyecto: implementar cache Redis, opti...
+
+ID: 5 | FECHA: 2025-06-19 04:54:47
+   >>> Recordatorio: backup de base de datos cada domingo...
+
+3. Leyendo notas por ID...
+[2025-06-19 01:54:49,274][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:49,275][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:49,277][Router][DEBUG] 5 notas leídas (router.py:173)
+ID: 1 | FECHA: 2025-06-19 04:54:42
+   >>> Mi primera nota de ejemplo
+[2025-06-19 01:54:50,269][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:50,269][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:50,271][Router][DEBUG] 5 notas leídas (router.py:173)
+ID: 3 | FECHA: 2025-06-19 04:54:45
+   >>> Notas de reunión: discutir arquitectura del sistema, revisar PRs pendientes
+[2025-06-19 01:54:51,270][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:51,271][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:51,272][Router][DEBUG] 5 notas leídas (router.py:173)
+ID: 5 | FECHA: 2025-06-19 04:54:47
+   >>> Recordatorio: backup de base de datos cada domingo a las 3 AM
+4. Buscando notas por contenido...
+[2025-06-19 01:54:52,303][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:52,304][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:52,306][Router][DEBUG] 5 notas leídas (router.py:173)
+Encontradas 1 nota(s) con 'Python':
+ID: 2 | FECHA: 2025-06-19 04:54:43
+   >>> Lista de tareas: comprar leche, estudiar Python, h...
+
+[2025-06-19 01:54:53,295][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:53,296][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:53,297][Router][DEBUG] 5 notas leídas (router.py:173)
+Encontradas 1 nota(s) con 'proyecto':
+ID: 4 | FECHA: 2025-06-19 04:54:46
+   >>> Ideas para proyecto: implementar cache Redis, opti...
+
+[2025-06-19 01:54:54,310][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:54,310][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:54,312][Router][DEBUG] 5 notas leídas (router.py:173)
+Encontradas 1 nota(s) con 'base de datos':
+ID: 5 | FECHA: 2025-06-19 04:54:47
+   >>> Recordatorio: backup de base de datos cada domingo...
+
+5. Modificando contenido de notas...
+[2025-06-19 01:54:55,335][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:55,335][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:55,405][Router][DEBUG] Nota id=1 actualizada (router.py:189)
+Nota 1 modificada exitosamente:
+   >>> Mi primera nota modificada con más contenido detal...
+[2025-06-19 01:54:55,405][Minimal-Notes][INFO] Nota modificada: ID=1 (cli.py:136)
+[2025-06-19 01:54:56,416][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:56,417][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:56,490][Router][DEBUG] Nota id=2 actualizada (router.py:189)
+Nota 2 modificada exitosamente:
+   >>> Lista actualizada: comprar leche, estudiar Python ...
+[2025-06-19 01:54:56,490][Minimal-Notes][INFO] Nota modificada: ID=2 (cli.py:136)
+6. Creando archivos para importar...
+7. Importando archivos como notas...
+[2025-06-19 01:54:57,576][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:57,577][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:57,647][Router][DEBUG] Nota creada: id=6 (router.py:162)
+Archivo importado como nota ID 6:
+   >>> Contenido importado desde archivo de texto plano
+[2025-06-19 01:54:57,647][Minimal-Notes][INFO] Archivo importado: .test/import_test.txt -> ID=6 (cli.py:235)
+[2025-06-19 01:54:58,630][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:58,630][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:58,697][Router][DEBUG] Nota creada: id=7 (router.py:162)
+Archivo importado como nota ID 7:
+   >>> Documentación del API REST:
+- GET /api/notes - Lis...
+[2025-06-19 01:54:58,697][Minimal-Notes][INFO] Archivo importado: .test/api_docs.txt -> ID=7 (cli.py:235)
+8. Exportando notas a archivos...
+[2025-06-19 01:54:59,704][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:54:59,704][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:54:59,706][Router][DEBUG] 7 notas leídas (router.py:173)
+Nota 1 exportada a: .test/nota_exportada_1.txt
+[2025-06-19 01:54:59,706][Minimal-Notes][INFO] Nota exportada: ID=1 -> .test/nota_exportada_1.txt (cli.py:210)
+[2025-06-19 01:55:00,759][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:00,760][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:00,761][Router][DEBUG] 7 notas leídas (router.py:173)
+Nota 6 exportada a: .test/nota_api_docs.txt
+[2025-06-19 01:55:00,762][Minimal-Notes][INFO] Nota exportada: ID=6 -> .test/nota_api_docs.txt (cli.py:210)
+9. Probando funciones de IA...
+[2025-06-19 01:55:01,941][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:01,941][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:01,943][Router][DEBUG] 7 notas leídas (router.py:173)
+Mejorando: Mi primera nota modificada con más contenido detal...
+
+[=== CONTENIDO MEJORADO ===]
+Mi primera nota, ahora con más detalle.
+
+[2025-06-19 01:55:03,324][Minimal-Notes][INFO] Nota mejorada: ID=1 (cli.py:275)
+¿Desea reemplazar la nota original con la versión mejorada? [y/N]: Y
+[2025-06-19 01:55:13,979][Router][DEBUG] Nota id=1 actualizada (router.py:189)
+Nota actualizada exitosamente.
+[2025-06-19 01:55:13,979][Minimal-Notes][INFO] Nota reemplazada con versión mejorada: ID=1 (cli.py:280)
+[2025-06-19 01:55:15,012][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:15,013][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:15,015][Router][DEBUG] 7 notas leídas (router.py:173)
+Resumiendo: Documentación del API REST:
+- GET /api/notes - Lis...
+
+[=== RESUMEN ===]
+Este documento describe la API REST para la gestión de notas. La API proporciona funcionalidades CRUD (Crear, Leer, Actualizar, Eliminar) para las notas, accesibles mediante solicitudes HTTP.
+
+La API permite listar todas las notas existentes a través de una solicitud GET a `/api/notes`, crear una nueva nota mediante una solicitud POST a la misma ruta.
+
+Para modificar una nota específica, se utiliza una solicitud PUT a `/api/notes/{id}`, donde `{id}` es el identificador único de la nota. Del mismo modo, se puede eliminar una nota concreta utilizando una solicitud DELETE a la misma ruta `/api/notes/{id}`.
+
+[2025-06-19 01:55:17,034][Minimal-Notes][INFO] Nota resumida: ID=7 (cli.py:347)
+¿Desea guardar el resumen como una nueva nota? [y/N]: Y
+[2025-06-19 01:55:23,279][Router][DEBUG] Nota creada: id=8 (router.py:162)
+Resumen guardado como nota ID 8
+[2025-06-19 01:55:23,279][Minimal-Notes][INFO] Resumen guardado: ID=8 (cli.py:353)
+[2025-06-19 01:55:24,306][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:24,306][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:24,308][Router][DEBUG] 8 notas leídas (router.py:173)
+Preguntando sobre nota 7: '¿Cuáles son los endpoints disponibles?'
+
+[=== RESPUESTA ===]
+Los endpoints disponibles son:
+
+*   `GET /api/notes`
+*   `POST /api/notes`
+*   `PUT /api/notes/{id}`
+*   `DELETE /api/notes/{id}`
+
+[2025-06-19 01:55:25,717][Minimal-Notes][INFO] Pregunta procesada para nota ID=7 (cli.py:383)
+[2025-06-19 01:55:26,722][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:26,722][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:26,723][Router][DEBUG] 8 notas leídas (router.py:173)
+Traduciendo a english la nota: Mi primera nota, ahora con más detalle.
+
+[=== TRADUCCIÓN A ENGLISH ===]
+My first note, now with more detail.
+
+[2025-06-19 01:55:27,954][Minimal-Notes][INFO] Nota traducida: ID=1 -> english (cli.py:311)
+¿Desea guardar la traducción como una nueva nota? [y/N]: Y
+[2025-06-19 01:55:32,153][Router][DEBUG] Nota creada: id=9 (router.py:162)
+Traducción guardada como nota ID 9
+[2025-06-19 01:55:32,153][Minimal-Notes][INFO] Traducción guardada: ID=9 (cli.py:317)
+[2025-06-19 01:55:33,271][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:33,271][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:33,272][Router][DEBUG] 9 notas leídas (router.py:173)
+Traduciendo a aleman la nota: Mi primera nota, ahora con más detalle.
+
+[=== TRADUCCIÓN A ALEMAN ===]
+Meine erste Notiz, jetzt detaillierter.
+
+[2025-06-19 01:55:34,498][Minimal-Notes][INFO] Nota traducida: ID=1 -> aleman (cli.py:311)
+¿Desea guardar la traducción como una nueva nota? [y/N]: N
+[2025-06-19 01:55:39,992][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:39,993][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:39,994][Router][DEBUG] 9 notas leídas (router.py:173)
+Traduciendo a binario la nota: Mi primera nota, ahora con más detalle.
+
+[=== TRADUCCIÓN A BINARIO ===]
+Aquí tienes el texto "Mi primera nota, ahora con más detalle" traducido a código binario usando la codificación UTF-8:
+
+01001101 01101001 00100000 01110000 01110010 01101001 01101101 01100101 01110010 01100001 00100000 01101110 01101111 01110100 01100001 00101100 00100000 01100001 01101000 01101111 01110010 01100001 00100000 01100011 01101111 01101110 00100000 01101101 01100001 01110011 00100000 01100100 01100101 01110100 01100001 01101100 01101100 01100101 00101110
+
+[2025-06-19 01:55:43,208][Minimal-Notes][INFO] Nota traducida: ID=1 -> binario (cli.py:311)
+¿Desea guardar la traducción como una nueva nota? [y/N]: Y
+[2025-06-19 01:55:44,652][Router][DEBUG] Nota creada: id=10 (router.py:162)
+Traducción guardada como nota ID 10
+[2025-06-19 01:55:44,652][Minimal-Notes][INFO] Traducción guardada: ID=10 (cli.py:317)
+10. Creando contenido adicional...
+[2025-06-19 01:55:45,692][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:45,692][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:45,752][Router][DEBUG] Nota creada: id=11 (router.py:162)
+Se creó nota con ID 11:
+   >>> Bug report: Error 500 en endpoint /api/users cuand...
+[2025-06-19 01:55:45,753][Minimal-Notes][INFO] Nota creada: ID=11 (cli.py:83)
+[2025-06-19 01:55:46,775][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:46,776][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:46,836][Router][DEBUG] Nota creada: id=12 (router.py:162)
+Se creó nota con ID 12:
+   >>> Performance notes: Query optimizada reduce tiempo ...
+[2025-06-19 01:55:46,836][Minimal-Notes][INFO] Nota creada: ID=12 (cli.py:83)
+[2025-06-19 01:55:47,838][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:47,839][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:47,902][Router][DEBUG] Nota creada: id=13 (router.py:162)
+Se creó nota con ID 13:
+   >>> Deploy checklist: tests passed, migrations run, ro...
+[2025-06-19 01:55:47,902][Minimal-Notes][INFO] Nota creada: ID=13 (cli.py:83)
+[2025-06-19 01:55:48,914][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:48,914][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:48,977][Router][DEBUG] Nota creada: id=14 (router.py:162)
+Se creó nota con ID 14:
+   >>> Code review feedback: refactor auth middleware, ad...
+[2025-06-19 01:55:48,977][Minimal-Notes][INFO] Nota creada: ID=14 (cli.py:83)
+11. Probando eliminación de notas...
+[2025-06-19 01:55:49,983][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:49,984][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:50,044][Router][DEBUG] Nota id=2 eliminada (router.py:200)
+Nota 2 eliminada exitosamente.
+[2025-06-19 01:55:50,044][Minimal-Notes][INFO] Nota eliminada: ID=2 (cli.py:152)
+[2025-06-19 01:55:51,050][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:51,050][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:51,052][Router][DEBUG] 13 notas leídas (router.py:173)
+ID: 1 | FECHA: 2025-06-19 04:54:42
+   >>> Mi primera nota, ahora con más detalle.
+
+ID: 3 | FECHA: 2025-06-19 04:54:45
+   >>> Notas de reunión: discutir arquitectura del sistem...
+
+ID: 4 | FECHA: 2025-06-19 04:54:46
+   >>> Ideas para proyecto: implementar cache Redis, opti...
+
+ID: 5 | FECHA: 2025-06-19 04:54:47
+   >>> Recordatorio: backup de base de datos cada domingo...
+
+ID: 6 | FECHA: 2025-06-19 04:54:57
+   >>> Contenido importado desde archivo de texto plano
+
+ID: 7 | FECHA: 2025-06-19 04:54:58
+   >>> Documentación del API REST:
+- GET /api/notes - Lis...
+
+ID: 8 | FECHA: 2025-06-19 04:55:23
+   >>> [Resumen de nota 7]
+Este documento describe la API...
+
+ID: 9 | FECHA: 2025-06-19 04:55:32
+   >>> [Traducción a english]
+My first note, now with mor...
+
+ID: 10 | FECHA: 2025-06-19 04:55:44
+   >>> [Traducción a binario]
+Aquí tienes el texto "Mi pr...
+
+ID: 11 | FECHA: 2025-06-19 04:55:45
+   >>> Bug report: Error 500 en endpoint /api/users cuand...
+
+ID: 12 | FECHA: 2025-06-19 04:55:46
+   >>> Performance notes: Query optimizada reduce tiempo ...
+
+ID: 13 | FECHA: 2025-06-19 04:55:47
+   >>> Deploy checklist: tests passed, migrations run, ro...
+
+ID: 14 | FECHA: 2025-06-19 04:55:48
+   >>> Code review feedback: refactor auth middleware, ad...
+
+12. Creando estructura final para GitHub...
+[2025-06-19 01:55:52,091][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:52,091][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:52,152][Router][DEBUG] Nota creada: id=15 (router.py:162)
+Se creó nota con ID 15:
+   >>> Configuración de entorno: NODE_ENV=production, POR...
+[2025-06-19 01:55:52,152][Minimal-Notes][INFO] Nota creada: ID=15 (cli.py:83)
+[2025-06-19 01:55:53,258][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:53,258][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:53,318][Router][DEBUG] Nota creada: id=16 (router.py:162)
+Se creó nota con ID 16:
+   >>> Arquitectura del sistema: Frontend React + Backend...
+[2025-06-19 01:55:53,319][Minimal-Notes][INFO] Nota creada: ID=16 (cli.py:83)
+[2025-06-19 01:55:54,298][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:54,299][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:54,368][Router][DEBUG] Nota creada: id=17 (router.py:162)
+Se creó nota con ID 17:
+   >>> Métricas: 95% uptime, 200ms response time, 10k DAU
+[2025-06-19 01:55:54,369][Minimal-Notes][INFO] Nota creada: ID=17 (cli.py:83)
+=== ESTADO FINAL ===
+[2025-06-19 01:55:55,377][Router][DEBUG] Router init: {'database': {'active': 'data/db/notes.db', 'prompts': 'data/prompts.json'}, 'logger': {'cli': 'data/log/cli.log', 'router': 'data/log/router.log', 'prompts': 'data/log/prompts.log', 'stream': True}} (router.py:42)
+[2025-06-19 01:55:55,377][Router][DEBUG] Config 'data/config.toml': sin cambios (router.py:104)
+[2025-06-19 01:55:55,379][Router][DEBUG] 16 notas leídas (router.py:173)
+ID: 1 | FECHA: 2025-06-19 04:54:42
+   >>> Mi primera nota, ahora con más detalle.
+
+ID: 3 | FECHA: 2025-06-19 04:54:45
+   >>> Notas de reunión: discutir arquitectura del sistem...
+
+ID: 4 | FECHA: 2025-06-19 04:54:46
+   >>> Ideas para proyecto: implementar cache Redis, opti...
+
+ID: 5 | FECHA: 2025-06-19 04:54:47
+   >>> Recordatorio: backup de base de datos cada domingo...
+
+ID: 6 | FECHA: 2025-06-19 04:54:57
+   >>> Contenido importado desde archivo de texto plano
+
+ID: 7 | FECHA: 2025-06-19 04:54:58
+   >>> Documentación del API REST:
+- GET /api/notes - Lis...
+
+ID: 8 | FECHA: 2025-06-19 04:55:23
+   >>> [Resumen de nota 7]
+Este documento describe la API...
+
+ID: 9 | FECHA: 2025-06-19 04:55:32
+   >>> [Traducción a english]
+My first note, now with mor...
+
+ID: 10 | FECHA: 2025-06-19 04:55:44
+   >>> [Traducción a binario]
+Aquí tienes el texto "Mi pr...
+
+ID: 11 | FECHA: 2025-06-19 04:55:45
+   >>> Bug report: Error 500 en endpoint /api/users cuand...
+
+ID: 12 | FECHA: 2025-06-19 04:55:46
+   >>> Performance notes: Query optimizada reduce tiempo ...
+
+ID: 13 | FECHA: 2025-06-19 04:55:47
+   >>> Deploy checklist: tests passed, migrations run, ro...
+
+ID: 14 | FECHA: 2025-06-19 04:55:48
+   >>> Code review feedback: refactor auth middleware, ad...
+
+ID: 15 | FECHA: 2025-06-19 04:55:52
+   >>> Configuración de entorno: NODE_ENV=production, POR...
+
+ID: 16 | FECHA: 2025-06-19 04:55:53
+   >>> Arquitectura del sistema: Frontend React + Backend...
+
+ID: 17 | FECHA: 2025-06-19 04:55:54
+   >>> Métricas: 95% uptime, 200ms response time, 10k DAU
+
+=== TESTING COMPLETADO ===
+Archivos generados durante el testing.s
+total 24
+drwxr-xr-x  2 blu blu 4096 Jun 19 01:55 .
+drwxr-xr-x 10 blu blu 4096 Jun 19 01:54 ..
+-rw-r--r--  1 blu blu  185 Jun 19 01:54 api_docs.txt
+-rw-r--r--  1 blu blu   49 Jun 19 01:54 import_test.txt
+-rw-r--r--  1 blu blu   93 Jun 19 01:55 nota_api_docs.txt
+-rw-r--r--  1 blu blu  100 Jun 19 01:54 nota_exportada_1.txt
+data/
+├── config.toml
+├── db
+│   └── notes.db
+├── log
+│   ├── cli.log
+│   ├── prompts.log
+│   └── router.log
+└── prompts.json
+
+3 directories, 6 files
