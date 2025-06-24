@@ -34,4 +34,9 @@ if [[ "$1" == "--test" ]]; then
     fi
 fi
 
+if [ "$missing" -eq 1 ] && [ "$1" != "--ignore-deps" ]; then
+  echo "[WRAPPER]: Para saltear este error usa --ignore-deps"
+  exit 1
+fi
+
 exec cli/mnctl "$@"
