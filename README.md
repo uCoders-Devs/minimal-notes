@@ -28,6 +28,10 @@ mnctl mejorar 1                 # IA optimiza estructura y contenido
 mnctl traducir 1 "english"     # Deploy internacional
 ```
 
+## 📸 Vista Superficial
+
+![](docs/MNCTL_CLI.png)
+
 ## ⚡ Features Core
 
 <table>
