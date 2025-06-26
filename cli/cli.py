@@ -69,6 +69,7 @@ def cli(ctx: typer.Context,
 
 # Comandos CRUD
 @app.command("crear")
+@app.command("create")
 @app.command("mk")
 def crear(ctx: typer.Context, content: str):
     """Crea una nueva nota con el contenido especificado."""
@@ -87,6 +88,7 @@ def crear(ctx: typer.Context, content: str):
 
 
 @app.command("listar")
+@app.command("list")
 @app.command("ls")
 def listar(ctx: typer.Context):
     """Lista todas las notas almacenadas."""
@@ -103,6 +105,7 @@ def listar(ctx: typer.Context):
 
 
 @app.command("leer")
+@app.command("read")
 @app.command("id")
 def leer(ctx: typer.Context, note_id: int):
     """Lee una nota específica por su ID."""
@@ -123,6 +126,8 @@ def leer(ctx: typer.Context, note_id: int):
 
 
 @app.command("modificar")
+@app.command("modify")
+@app.command("update")
 @app.command("mod")
 def modificar(ctx: typer.Context, note_id: int, content: str):
     """Modifica el contenido de una nota existente."""
@@ -140,6 +145,8 @@ def modificar(ctx: typer.Context, note_id: int, content: str):
 
 
 @app.command("eliminar")
+@app.command("remove")
+@app.command("delete")
 @app.command("rm")
 def eliminar(ctx: typer.Context, note_id: int):
     """Elimina una nota por su ID."""
@@ -157,6 +164,8 @@ def eliminar(ctx: typer.Context, note_id: int):
 
 # Comandos Adicionales
 @app.command("buscar")
+@app.command("search")
+@app.command("find")
 @app.command("grep")
 def buscar(ctx: typer.Context, query: str):
     """Busca notas que contengan el texto especificado."""
@@ -179,7 +188,9 @@ def buscar(ctx: typer.Context, query: str):
         typer.echo(f"   >>> {n[1][:50]}{'...' if len(n[1]) > 50 else ''}\n")
 
 
-@app.command()
+@app.command("exportar")
+@app.command("export")
+@app.command("out")
 def exportar(ctx: typer.Context, note_id: int, filename: Optional[str] = None):
     """Exporta una nota a un archivo."""
     router = ctx.obj.router
@@ -213,7 +224,9 @@ def exportar(ctx: typer.Context, note_id: int, filename: Optional[str] = None):
         sys.exit(1)
 
 
-@app.command()
+@app.command("importar")
+@app.command("import")
+@app.command("in")
 def importar(ctx: typer.Context, file_path: str):
     """Importa contenido de un archivo como nueva nota."""
     router = ctx.obj.router
@@ -247,7 +260,8 @@ def importar(ctx: typer.Context, file_path: str):
 
 
 # Comandos IA. TODO: Tratar de refactorizar y encapsular la logica (Simplificar código).
-@app.command()
+@app.command("mejorar")
+@app.command("enhance")
 def mejorar(ctx: typer.Context, note_id: int):
     """Mejora el contenido de una nota usando IA."""
     router = ctx.obj.router
@@ -282,7 +296,9 @@ def mejorar(ctx: typer.Context, note_id: int):
         logger.error(f"Falló mejora de nota ID={note_id}")
 
 
-@app.command() 
+@app.command("traducir") 
+@app.command("translate") 
+@app.command("trans") 
 def traducir(ctx: typer.Context, note_id: int, language: str):
     """Traduce una nota al idioma especificado."""
     router = ctx.obj.router
@@ -319,7 +335,9 @@ def traducir(ctx: typer.Context, note_id: int, language: str):
         logger.error(f"Falló traducción de nota ID={note_id}")
 
 
-@app.command()
+@app.command("resumir")
+@app.command("summarize")
+@app.command("sum")
 def resumir(ctx: typer.Context, note_id: int):
     """Resume una nota utilizando IA."""
     router = ctx.obj.router
@@ -355,7 +373,8 @@ def resumir(ctx: typer.Context, note_id: int):
         logger.error(f"Falló resumen de nota ID={note_id}")
 
 
-@app.command()
+@app.command("preguntar")
+@app.command("ask")
 def preguntar(ctx: typer.Context, note_id: int, question: str):
     """Hace una pregunta sobre el contenido de una nota específica."""
     router = ctx.obj.router
