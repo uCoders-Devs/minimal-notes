@@ -113,7 +113,7 @@ mnctl traducir 2 "english"               # i18n ready
 
 ## 📚 Documentación
 
--   **Uso completo**: [`docs/mnctl.md`](docs/mnctl.md)
+-   **Uso completo**: [`docs/MNCTL.md`](docs/MNCTL.md)
 -   **Detalles técnicos**: Rama `testing`
 -   **Testing logs**: `data/log/`
 
