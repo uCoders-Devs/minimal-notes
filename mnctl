@@ -21,19 +21,6 @@ for lib in typer dotenv google/genai; do
   }
 done
 
-# Al final, antes del exec
-if [[ "$1" == "--test" ]]; then
-    script_dir="$(dirname "$0")"
-    test_script="$script_dir/mnctl.test.sh"
-    
-    if [[ -f "$test_script" ]]; then
-        exec "$test_script" "${@:2}"
-    else
-        echo "[WRAPPER]: mnctl.test.sh no encontrado en $script_dir"
-        exit 1
-    fi
-fi
-
 if [ "$missing" -eq 1 ] && [ "$1" != "--ignore-deps" ]; then
   echo "[WRAPPER]: Para saltear este error usa --ignore-deps"
   exit 1
