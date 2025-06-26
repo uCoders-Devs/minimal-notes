@@ -1,5 +1,0 @@
-Documentación del API REST:
-- GET /api/notes - Lista todas las notas
-- POST /api/notes - Crea nueva nota
-- PUT /api/notes/{id} - Actualiza nota
-- DELETE /api/notes/{id} - Elimina nota
