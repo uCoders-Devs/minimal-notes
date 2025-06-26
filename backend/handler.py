@@ -1,4 +1,9 @@
-from database import (
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from backend.database import (
     create_connection,
     create_table,
     add_note,
