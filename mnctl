@@ -1,0 +1,29 @@
+#!/bin/env sh
+
+# Validar entorno virtual activo
+if [ -z "$VIRTUAL_ENV" ]; then
+  echo "[WRAPPER]: Activa tu entorno virtual antes de ejecutar este script."
+  exit 1
+fi
+
+# Validar directorio raíz
+if [ ! -f "cli/cli.py" ]; then
+  echo "[WRAPPER]: Ejecuta este script desde la raíz del proyecto."
+  exit 1
+fi
+
+# HACK: Validar existencia de librerías en el VENV. (Performance)
+missing=0
+for lib in typer dotenv google/genai; do
+  find "$VIRTUAL_ENV/lib" -type d -path "*/$lib" -print -quit | grep -q . || {
+    echo "[WRAPPER]: Falta dependencia: $lib"
+    missing=1
+  }
+done
+
+if [ "$missing" -eq 1 ] && [ "$1" != "--ignore-deps" ]; then
+  echo "[WRAPPER]: Para saltear este error usa --ignore-deps"
+  exit 1
+fi
+
+exec cli/mnctl "$@"
